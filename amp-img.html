@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AMP Image Creator</title>
+
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+        <link rel="shortcut icon" href="https://www.ampproject.org/static/img/amp_favicon.png?v=3">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://www.ampproject.org/static/img/icons/120.png">
+         <link rel="apple-touch-icon" sizes="152x152" href="https://www.ampproject.org/static/img/icons/152.png">
+         <link rel="apple-touch-icon" sizes="167x167" href="https://www.ampproject.org/static/img/icons/167.png">
+         <link rel="apple-touch-icon" sizes="180x180" href="https://www.ampproject.org/static/img/icons/180.png">
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </head>
+    <body>
+
+        <div class="container">
+        <div class="row">
+        <div class="col-md-4">
+            <h1>AMP Image Creator</h1>
+            <p>Create <code>amp-img</code> tag from image url quickly</p>
+
+
+            <p>
+            <a class="github-button" href="https://github.com/petanikode/amp-tools/fork" data-icon="octicon-repo-forked" data-count-href="/petanikode/amp-tools/network" data-count-api="/repos/petanikode/amp-tools#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork petanikode/amp-tools on GitHub">Fork</a>
+            <a class="github-button" href="https://github.com/petanikode/amp-tools" data-icon="octicon-star" data-count-href="/petanikode/amp-tools/stargazers" data-count-api="/repos/petanikode/amp-tools#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star petanikode/amp-tools on GitHub">Star</a>
+            </p>
+        </div>
+        <div class="col-md-8">
+            <!-- Future Development, mybe ads here -->
+        </div>
+        </div>
+        </div>
+
+        <div class="container" id="app">
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+                    <div class="panel panel-default" style="margin-top:2vh">
+                        <div class="panel-body">
+
+                    <div class="form-group">
+                        <label>Image URL*</label>
+                        <input class="form-control" v-on:keyup="getImageData()" v-model="src" type="text" placeholder="http://example.com/image.jpg" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Layout</label>
+                        <select class="form-control" v-model="layout">
+                            <option>nodisplay</option>
+                            <option>fixed</option>
+                            <option>responsive</option>
+                            <option>fixed-height</option>
+                            <option>fill</option>
+                            <option>container</option>
+                            <option>flex-item</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alt text</label>
+                        <input class="form-control" v-model="alt" type="text" placeholder="alternative text" />
+                    </div>
+
+                    <div class="form-group">
+                        <textarea onclick="this.select()" class="form-control" rows="8" style="font-family:monospace">
+&lt;amp-img
+    width="{{ width }}"
+    height="{{ height }}"
+    alt="{{ alt }}"
+    src="{{ src }}"
+    layout="{{ layout }}"&gt;
+&lt;/amp-img&gt;</textarea>
+                    </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+            <p>Made with <i class="glyphicon glyphicon-heart"></i> by <a href="http://petanikode.com/" rel="dofollow">Petani Kode</a></p>
+            </div>
+            </div>
+            </div>
+        </footer>
+
+
+        <script src="assets/js/amp-img-generator.js"></script>
+    </body>
+</html>
